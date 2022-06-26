@@ -26,7 +26,7 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 	
 	
 public static  int maxProfit(int[] prices) {
-	 int min_price = Integer.MAX_VALUE;
+	 int min_price =Integer.MAX_VALUE;
 	 int max_profit =0;
 	 
 	 for(int i=0;i<prices.length;i++) {

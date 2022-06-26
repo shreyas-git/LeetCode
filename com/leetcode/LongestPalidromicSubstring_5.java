@@ -3,7 +3,7 @@ package com.leetcode;
 public class LongestPalidromicSubstring_5 {
 
 	public static void main(String[] args) {
-		String str= "abba";
+		String str= "QWQWRACECARRYYRTY";
 		System.out.println(longestPalindrome(str));
 
 	}
@@ -19,7 +19,8 @@ public class LongestPalidromicSubstring_5 {
 	            start = i - (len - 1) / 2;  //"racecar"  we need to check the starting index 
 	            end = i + len / 2;
 	        }
-	    }
+	        
+	    } 
 	    return s.substring(start, end + 1);
 	}
 
@@ -35,6 +36,8 @@ public class LongestPalidromicSubstring_5 {
 	     */
 	 
 	    return R - L - 1;
+	  
+	    
 	}
 
 }
