@@ -23,7 +23,7 @@ Output: 2
 public class JumpGame2_45 {
 
 	public static void main(String[] args) {
-		int []nums = {2,3,1,1,4};
+		int []nums = {1,2,0,3,0,0};//{2,3,1,1,4};
 		System.out.println(jump(nums));
 	}
 
