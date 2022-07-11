@@ -24,22 +24,24 @@ Explanation: You will start at index 0.
 The total cost is 6.
 		 */
 		
-		int cost[] = {1,100,1,1,1,100,1,1,100,1};
+		int cost[] = {10,15,20};//{1,100,1,1,1,100,1,1,100,1};
 		System.out.println(minCostClimbingStairs(cost));
 
 	}
 	
 	 public static int minCostClimbingStairs(int[] cost) {
 	        int [] mincost = new int [cost.length+1];
-	        // mincost[0] = 0;
-	        // mincost[1] = 0;
+	         mincost[0] = 0;
+	         mincost[1] = 0;
 	        
-	        
+	        //10 ,15 ,20
 	        for(int i=2;i<mincost.length;i++){
+	        	int a = (mincost[i-1]+cost[i-1]);
+	        	int b =(mincost[i-2]+cost[i-2]);
 	            mincost[i] = Math.min((mincost[i-1]+cost[i-1]),(mincost[i-2]+cost[i-2]));
 	        }
 	        
-	        return mincost[mincost.length -1];
+	        return mincost[mincost.length -1];	
 	    }
 
 }

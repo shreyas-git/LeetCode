@@ -26,7 +26,27 @@ public class FindDuplicate_287 {
 		System.out.println(findDuplicate(nums));
 
 	}
-	
+	/*
+	 *  public int findDuplicate(int[] nums) {
+       
+      int slow = nums[0];
+      int fast = nums[0];
+      
+      do{
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+      }while(slow!=fast);
+      
+      slow = nums[0];
+      
+      while(slow!=fast){
+        slow = nums[slow];
+        fast = nums[fast];
+      }
+      
+      return fast;
+    }
+	 */
 	 public static  int findDuplicate(int[] nums) {
 	        int duplicate = -1;
 	        for (int i = 0; i < nums.length; i++) {
