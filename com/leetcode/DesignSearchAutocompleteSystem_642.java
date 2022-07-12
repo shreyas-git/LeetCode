@@ -1,0 +1,115 @@
+package com.leetcode;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class DesignSearchAutocompleteSystem_642 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String [] sentences = {"i love you", "island", "iroman", "i love leetcode"};
+		int [] times = {5, 3, 2, 2};
+		DesignSearchAutocompleteSystem_642 obj = new DesignSearchAutocompleteSystem_642(sentences,times);
+	
+		obj.input('i'); // return ["i love you", "island", "i love leetcode"]. There are four sentences that have prefix "i". Among them, "ironman" and "i love leetcode" have same hot degree. Since ' ' has ASCII code 32 and 'r' has ASCII code 114, "i love leetcode" should be in front of "ironman". Also we only need to output top 3 hot sentences, so "ironman" will be ignored.
+		obj.input(' '); // return ["i love you", "i love leetcode"]. There are only two sentences that have prefix "i ".
+		obj.input('a'); // return []. There are no sentences that have prefix "i a".
+		obj.input('#'); // return []. The user finished the input, the sentence "i a" should be saved as a historical sentence in system. And the following input will be counted as a new search.
+	
+	}
+	
+	
+	 class TrieNode implements Comparable<TrieNode> {
+	        TrieNode[] children;
+	        String s;
+	        int times;
+	        List<TrieNode> hot;
+
+	        public TrieNode() {
+	            children = new TrieNode[128];
+	            s = null;
+	            times = 0;
+	            hot = new ArrayList<>();
+	        }
+
+	        public int compareTo(TrieNode o) {
+	            if (this.times == o.times) {
+	                return this.s.compareTo(o.s);
+	            }
+
+	            return o.times - this.times;
+	        }
+
+	        public void update(TrieNode node) {
+	            if (!this.hot.contains(node)) {
+	                this.hot.add(node);
+	            }
+
+	            Collections.sort(hot);
+
+	            if (hot.size() > 3) {
+	                hot.remove(hot.size() - 1);
+	            }
+	        }
+	    }
+
+	    TrieNode root;
+	    TrieNode cur;
+	    StringBuilder sb;
+	    public DesignSearchAutocompleteSystem_642(String[] sentences, int[] times) {
+	        root = new TrieNode();
+	        cur = root;
+	        sb = new StringBuilder();
+
+	        for (int i = 0; i < times.length; i++) {
+	            add(sentences[i], times[i]);
+	        }
+	    }
+
+
+	    public void add(String sentence, int t) {
+	        TrieNode tmp = root;
+
+	        List<TrieNode> visited = new ArrayList<>();
+	        for (char c : sentence.toCharArray()) {
+	            if (tmp.children[c] == null) {
+	                tmp.children[c] = new TrieNode();
+	            }
+
+	            tmp = tmp.children[c];
+	            visited.add(tmp);
+	        }
+
+	        tmp.s = sentence;
+	        tmp.times += t;
+
+	        for (TrieNode node : visited) {   
+	            node.update(tmp);
+	        }
+	    }
+
+	    public List<String> input(char c) {
+	        List<String> res = new ArrayList<>();
+	        if (c == '#') {
+	            add(sb.toString(), 1);
+	            sb = new StringBuilder();
+	            cur = root;
+	            return res;
+	        }
+
+	        sb.append(c);
+	        if (cur != null) {
+	            cur = cur.children[c];
+	        }
+
+	        if (cur == null) return res;
+	        for (TrieNode node : cur.hot) {
+	            res.add(node.s);
+	        }
+
+	        return res;
+	    }
+
+}
