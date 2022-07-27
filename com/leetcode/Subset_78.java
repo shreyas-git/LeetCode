@@ -23,7 +23,7 @@ Output: [[],[0]]
 public class Subset_78 {
 
 	public static void main(String[] args) {
-		int nums[] = { 4,4,4,1,4 };
+		int nums[] = { 1,2,3};
 		System.out.println(subsets(nums));
 
 	}
@@ -38,20 +38,35 @@ public class Subset_78 {
 	}
 
 	
-
-
-	public  static  void findSubset(int[] nums, List<Integer> temp,List<List<Integer>> res,int startIndex){
-	        
-	        if(!res.contains(temp)) {
-	        	res.add(new ArrayList<>(temp));
-	        }
-	        
-	        for(int i = startIndex;i<nums.length;i++){
-	            temp.add(nums[i]);
-	             findSubset(nums,temp,res,i+1);
-	            temp.remove(temp.size() -1);
-	        }
-	        
+	public static  void findSubset(int[] nums, List<Integer> temp,List<List<Integer>> res,int startIndex){
+	       
+	      if(startIndex == nums.length){
+	        res.add(new ArrayList<Integer>(temp));
+	        System.out.println(temp);
+	        return;
+	      }
+	      
+	      temp.add(nums[startIndex]);
+	       System.out.println(temp);
+	      findSubset(nums,temp,res,startIndex+1);
+	      temp.remove(temp.size()-1);
+	      findSubset(nums,temp,res,startIndex+1);
 	    }
+	
+
+
+//	public  static  void findSubset(int[] nums, List<Integer> temp,List<List<Integer>> res,int startIndex){
+//	        
+//	        if(!res.contains(temp)) {
+//	        	res.add(new ArrayList<>(temp));
+//	        }
+//	        
+//	        for(int i = startIndex;i<nums.length;i++){
+//	            temp.add(nums[i]);
+//	             findSubset(nums,temp,res,i+1);
+//	            temp.remove(temp.size() -1);
+//	        }
+//	        
+//	    }
 
 }

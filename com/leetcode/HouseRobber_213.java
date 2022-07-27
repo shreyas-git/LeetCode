@@ -3,7 +3,7 @@ package com.leetcode;
 public class HouseRobber_213 {
 
 	public static void main(String[] args) {
-		int nums []= {1,2,3};
+		int nums []= {1,2,3,1};
 		System.out.println(rob(nums));
 
 	}

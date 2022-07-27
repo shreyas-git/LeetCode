@@ -29,7 +29,7 @@ public class Permutations_46 {
 	public static void main(String[] args) {
 		int nums[] = { 1, 2, 3 };
 
-		System.out.println(permute(nums));
+		System.out.println(permute_1(nums));
 	}
 
 	public static List<List<Integer>> permute(int[] nums) {
@@ -63,5 +63,41 @@ public class Permutations_46 {
 			}
 		
 	}
+	
+	
+	 public static  List<List<Integer>> permute_1(int[] nums) {
+	        List<List<Integer>> res = new ArrayList<>();
+			
+			ArrayList<Integer> temp = new ArrayList<Integer>();
+		   
+			
+			permutation(res,temp,nums,new boolean[nums.length]);
+			
+			return res;
+	    }
+	  
+
+		private static void permutation( List<List<Integer>> res, ArrayList<Integer> temp,int [] nums,boolean[] visited) {
+			
+			if(temp.size() == nums.length) {
+				res.add(new ArrayList<>(temp));
+				return;
+			}
+			
+				for(int i = 0;i<nums.length;i++) {
+					
+	        if(visited[i] == true) continue;
+	        
+	          visited[i] = true;
+	          temp.add(nums[i]);
+	        permutation(res,temp,nums,visited);
+	        temp.remove(temp.size()-1);
+	        
+	        visited[i] = false;
+					
+				
+				}
+			
+		}
 
 }
