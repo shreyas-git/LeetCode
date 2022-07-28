@@ -15,7 +15,7 @@ public class BestTimetoBuyandSellStockIV_188 {
 	public static void main(String[] args) {
 
 		int k = 2;
-		int[] prices = { 3, 2, 6, 5, 0, 3 };
+		int[] prices = { 1,2,3,4,5 };
 		
 		System.out.println(maxProfit(k, prices));
 
