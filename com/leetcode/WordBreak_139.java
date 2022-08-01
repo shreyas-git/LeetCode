@@ -32,15 +32,17 @@ public class WordBreak_139 {
 
 	public static void main(String[] args) {
 		
-		String s = "applepenapple";
+		String s = "catsandog";
 		
-				String test = "leet";
-				System.out.println(test.substring(1));
+				System.out.println(s.substring(0,3));
 				
 	List<String> list = new ArrayList<>();
 	
-	list.add("apple");
-	list.add("pen");
+	list.add("cat");
+	list.add("cats");
+	list.add("and");
+	list.add("sand");
+	list.add("dog");
 //	System.out.println(wordBreakBackTrack(s, list));
 	System.out.println(wordBreak(s, list));
 	}
@@ -54,6 +56,8 @@ public class WordBreak_139 {
 		
 		for(int i=1;i<=s.length();i++) {
 			for(int j=0;j<i;j++) {
+			System.out.println( s.substring(j,i));
+				
 				if(dp[j] && dictionary.contains(s.substring(j,i))) {
 					dp[i]=true;
 					break;
