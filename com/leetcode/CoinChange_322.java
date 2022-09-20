@@ -12,9 +12,9 @@ public class CoinChange_322 {
 		
 //System.out.println(findCombination(nums,target));// leads to TLE
 
-//System.out.println(getCountOfCombination(nums, target, nums.length));
+System.out.println("getCountOfCombination="+getCountOfCombination(nums, target, nums.length));
 
-System.out.println(coinChange(nums, target));
+System.out.println("Minimun number of coins need to make target"+coinChange(nums, target));
 	}
 	
 	 public static int coinChange(int[] coins, int amount) {

@@ -23,7 +23,8 @@ Explanation: The substring is "aa" with length 2.
 public class LongestSubstringWithAtMost_K_DistinctCharacters_340 {
 
 	public static void main(String[] args) {
-		System.out.println(lengthOfLongestSubstringKDistinct("LOVELEETCODE", 4));
+		//System.out.println(lengthOfLongestSubstringKDistinct("LOVELEETCODE", 4));
+		System.out.println(lengthOfLongestSubstringKDistinct("eceba", 2));
 		//output = LOVELEE = 7
 	}
 	

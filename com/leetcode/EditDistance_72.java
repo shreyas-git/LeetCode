@@ -94,7 +94,8 @@ System.out.println(minDistance("CAT", "CUT"));
         if(s1.charAt(m) == s2.charAt(n)){
             return edRecursive(s1,s2,m-1,n-1);
         }else{
-            return 1 + Math.min( edRecursive(s1,s2,m-1,n-1) , Math.min(edRecursive(s1,s2,m-1,n),edRecursive(s1,s2,m,n-1)));
+            return 1 + Math.min( edRecursive(s1,s2,m-1,n-1) ,
+            		   Math.min(edRecursive(s1,s2,m-1,n),edRecursive(s1,s2,m,n-1)));
         }
         
     }

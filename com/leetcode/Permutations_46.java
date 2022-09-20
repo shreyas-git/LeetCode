@@ -86,14 +86,14 @@ public class Permutations_46 {
 			
 				for(int i = 0;i<nums.length;i++) {
 					
-	        if(visited[i] == true) continue;
+	        if(visited[i] == true)continue;
 	        
-	          visited[i] = true;
-	          temp.add(nums[i]);
-	        permutation(res,temp,nums,visited);
-	        temp.remove(temp.size()-1);
-	        
-	        visited[i] = false;
+		          visited[i] = true;
+		          temp.add(nums[i]);
+		        permutation(res,temp,nums,visited);
+		        temp.remove(temp.size()-1);
+		        
+		        visited[i] = false;
 					
 				
 				}
