@@ -45,7 +45,7 @@ public class DecodeWays_91 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String s = "20";
+		String s = "12";
 		
 		//System.out.println(decode(s,0,new int[s.length()]));
 		

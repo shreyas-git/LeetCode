@@ -14,6 +14,16 @@ public class RecoverBinarySearchTree_99 {
 		// TODO Auto-generated method stub
 		int nums[] = {1,3,2,4};//{1,2,9,5,6,7,8,4,10};
 		
+		
+/*             3
+ *           /   \
+ *          1     4
+ *               /
+ *              2 
+ *        
+ * 
+ */
+		
 		TreeNode node3 = new TreeNode(3);
 		node3.left = new TreeNode(1);
 		node3.right = new TreeNode(4);
@@ -67,8 +77,9 @@ public class RecoverBinarySearchTree_99 {
 	        
 	      }
 	    }
+	    System.out.println();
 	    System.out.println("x= "+ x);
-			    System.out.println("y = "+y);
+		System.out.println("y = "+y);
 	    return new int[]{x,y};
 	  }
 	  

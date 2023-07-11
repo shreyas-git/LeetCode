@@ -47,7 +47,7 @@ public class Subset_78 {
 	      }
 	      
 	      temp.add(nums[startIndex]);
-	       System.out.println(temp);
+	      // System.out.println(temp);
 	      findSubset(nums,temp,res,startIndex+1);
 	      temp.remove(temp.size()-1);
 	      findSubset(nums,temp,res,startIndex+1);
@@ -55,18 +55,18 @@ public class Subset_78 {
 	
 
 
-//	public  static  void findSubset(int[] nums, List<Integer> temp,List<List<Integer>> res,int startIndex){
-//	        
-//	        if(!res.contains(temp)) {
-//	        	res.add(new ArrayList<>(temp));
-//	        }
-//	        
-//	        for(int i = startIndex;i<nums.length;i++){
-//	            temp.add(nums[i]);
-//	             findSubset(nums,temp,res,i+1);
-//	            temp.remove(temp.size() -1);
-//	        }
-//	        
-//	    }
+	public  static  void findSubset1(int[] nums, List<Integer> temp,List<List<Integer>> res,int startIndex){
+	        
+	        if(!res.contains(temp)) {
+	        	res.add(new ArrayList<>(temp));
+	        }
+	        
+	        for(int i = startIndex;i<nums.length;i++){
+	            temp.add(nums[i]);
+	            findSubset1(nums,temp,res,i+1);
+	            temp.remove(temp.size() -1);
+	        }
+	        
+	    }
 
 }

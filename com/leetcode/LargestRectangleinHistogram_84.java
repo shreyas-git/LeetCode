@@ -18,7 +18,7 @@ The largest rectangle is shown in the red area, which has an area = 10 units.
 public class LargestRectangleinHistogram_84 {
 
 	public static void main(String[] args) {
-		int []heights = {6,2,5,4,1,5,6};
+		int []heights = {2,1,5,6,2,3};//{6,2,5,4,1,5,6};
 		System.out.println(largestRectangleArea(heights));
 
 	}
