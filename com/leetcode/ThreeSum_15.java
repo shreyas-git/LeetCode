@@ -10,8 +10,8 @@ import java.util.Set;
 public class ThreeSum_15 {
 
 	public static void main(String[] args) {
-		int[] nums = {1,0,-1,0,-2,2};
-		int sum = 4;
+		int[] nums = {-1,0,1,2,-1,-4};
+		int sum = 3;
 
 		Set<List<Integer>> set = new HashSet<>();
 		
@@ -23,9 +23,9 @@ public class ThreeSum_15 {
 			System.out.println(ans.toString());
 		}
 		
-		// findCombination(nums, sum);
+		 //findCombination(nums, sum);
 
-		//List<List<Integer>> res = find3SumWithoutDuplicates(nums);
+		List<List<Integer>> res = find3SumWithoutDuplicates(nums);
 
 	}
 
@@ -45,7 +45,8 @@ public class ThreeSum_15 {
 				while (low < high) {
 					if (nums[i] + nums[low] + nums[high] == 0) {
 						res.add(Arrays.asList(nums[i], nums[low], nums[high]));
-                        while(low<high && nums[low] == nums[low+1]) low++; // this to remove duplicates eg : [-2,0,0,2,2] if not there then o/p = [[-2,0,2],[-2,0,2]] expected = [[-2,0,2]] 
+                        while(low<high && nums[low] == nums[low+1]) low++; //
+                        //this to remove duplicates eg : [-2,0,0,2,2] if not there then o/p = [[-2,0,2],[-2,0,2]] expected = [[-2,0,2]] 
                         while(low<high && nums[high] == nums[high-1]) high--;
 						low++;
 						high--;
