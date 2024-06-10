@@ -29,7 +29,7 @@ public class Permutations_46 {
 	public static void main(String[] args) {
 		int nums[] = { 1, 2, 3 };
 
-		System.out.println(permute_1(nums));
+		System.out.println(permute(nums));
 	}
 
 	public static List<List<Integer>> permute(int[] nums) {
@@ -59,7 +59,7 @@ public class Permutations_46 {
 			for(int i = index;i<length;i++) {
 				Collections.swap(temp, index, i);
 				permutation(res, temp, index+1, length);
-				Collections.swap(temp, index, i);
+				Collections.swap(temp,  i,index);
 			}
 		
 	}

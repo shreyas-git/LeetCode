@@ -1,0 +1,19 @@
+
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(×ñ¦É
+S
+java:S1163"=Refactor this code to not throw exceptions in finally blocks.(×ñ¦É
+J
+java:S1143"4Remove this throw statement from this finally block.(×ñ¦É
+M
+java:S3518"7Make sure "b" can't be zero before doing this division.(ò„¢ó
+<
+java:S1481"&Remove this unused "c" local variable.(ò„¢ó
+E	java:S106"+Replace this use of System.out by a logger.(š—°øÿÿÿÿ
+`
+java:S1128"ERemove this unused import 'java.nio.charset.MalformedInputException'.(ÖßÉ’øÿÿÿÿ
+K
+java:S1128"5Remove this unused import 'java.text.ParseException'.(ñ®ï•
+J
+java:S1128"4Remove this unused import 'java.util.regex.Matcher'.(ëÅ›ã
+O
+java:S1128"4Remove this unused import 'java.util.regex.Pattern'.(Ã•…Äúÿÿÿÿ

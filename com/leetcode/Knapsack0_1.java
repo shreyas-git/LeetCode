@@ -13,6 +13,7 @@ public class Knapsack0_1 {
 		int wt[] = { 10, 20, 30 };
 		int W = 50;
 
+		//Knapsack Recursive
 		Instant start = Instant.now();
 		System.out.println(knapRecursive(val, wt, W, wt.length));
 

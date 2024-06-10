@@ -22,7 +22,7 @@ public class LetterCombinationsofaPhoneNumber_17 {
 
 	public static void main(String[] args) {
 		
-System.out.println(letterCombinations("123"));
+System.out.println(letterCombinations("23"));
 
 	}
 

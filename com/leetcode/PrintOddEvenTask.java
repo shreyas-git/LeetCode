@@ -10,6 +10,8 @@ public class PrintOddEvenTask {
 	    t1.start();
 	    t2.start();
 
+
+
 	}
 
 }
@@ -51,7 +53,7 @@ class Printer {
     private  boolean isOdd;
 
     synchronized void printEven(int number) {
-        while (!isOdd) {
+        if (!isOdd) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -64,7 +66,7 @@ class Printer {
     }
 
     synchronized void printOdd(int number) {
-        while (isOdd) {
+        if (isOdd) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -76,3 +78,4 @@ class Printer {
         notify();
     }
 }
+
