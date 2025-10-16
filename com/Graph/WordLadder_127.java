@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.Graph;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -21,11 +21,13 @@ public class WordLadder_127 {
 
 	public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
 		
-		
+		// base cases
+		//1. is endword not exists in the dictionary
 		if(!wordList.contains(endWord)) {
 			return 0;
 			
 		}
+		// create set for removing duplicates and faster search
 		Set<String> set = new HashSet();
 		for(String word :wordList) {
 			set.add(word);
@@ -42,10 +44,21 @@ public class WordLadder_127 {
 		
 		while(!queue.isEmpty()) {
 			int  size = queue.size();
-			
+
+			// this for loop is needed for traversing each level
+			/*
+			Each arrow is one transformation. The level variable counts these steps.
+Level 1: "hit" → queue has 1 word
+Level 2: "hot" → queue has 1 word
+Level 3: "dot", "lot" → queue has 2 words
+Level 4: "dog", "log" → queue has 2 words
+Level 5: "cog" → found!
+The for (int i = 0; i < size; i++) loop ensures that each level is processed completely before moving to the next,
+ so level accurately reflects the number of transformations.
+			 */
 			for(int i=0;i<size;i++) {
 				String curr_word = queue.poll();
-				
+
 				char[] word_chars = curr_word.toCharArray();
 				
 				for(int j=0;j<word_chars.length;j++) {
@@ -53,7 +66,7 @@ public class WordLadder_127 {
 					
 					for(char c='a' ;c<'z' ;c++) {
 						if(word_chars[j] == c) continue;
-						word_chars[j] = c;
+						word_chars[j] = c; //changing value here ***
 						
 						String new_word = String.valueOf(word_chars);
 						if(new_word.equals(endWord)) {
@@ -66,7 +79,7 @@ public class WordLadder_127 {
 					}
 					
 					
-					word_chars[j] = original;
+					word_chars[j] = original;  // restoring value here
 				}
 				
 			}
