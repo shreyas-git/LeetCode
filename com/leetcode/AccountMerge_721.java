@@ -86,11 +86,12 @@ class Solution {
   
   private void buildGraph(List<List<String>> accounts, Map<String,HashSet<String>> graph,Map<String,String> emailToName){
     
-    for(List<String> account :accounts){ //{{"John","johnsmith@mail.com","john_newyork@mail.com"}
-
+    for(List<String> account :accounts){
+        //{{"John","johnsmith@mail.com","john_newyork@mail.com"}
       String name = account.get(0);
       boolean isFirst = true;
-      for(int i=1;i<account.size();i++){ //"johnsmith@mail.com","john_newyork@mail.com"
+      for(int i=1;i<account.size();i++){
+          //"johnsmith@mail.com","john_newyork@mail.com"
         
         String mail = account.get(i);
         
