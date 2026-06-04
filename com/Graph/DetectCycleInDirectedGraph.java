@@ -40,7 +40,7 @@ public class DetectCycleInDirectedGraph {
 
     private static boolean dfsCycleUtil_1(Graph g, boolean[] visited, boolean[] recursionStack, int start) {
 
-        if( visited[start]) { return false; }
+        if( visited[start]) { return true; }
         if( recursionStack[start]) { return true; }
         visited[start] = true;
         recursionStack[start] = true;
